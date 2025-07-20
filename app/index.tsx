@@ -1,15 +1,20 @@
-import { Text, View } from "react-native";
+import React from 'react';
 
-export default function Index() {
+
+import { AuthProvider } from '@/context/AuthContext';
+import RootNavigator from '@/lib/navigation/RootNavigator';
+
+import { StatusBar } from 'expo-status-bar';
+
+
+const App = () => {
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text>Edit app/index.tsx to edit this screen.</Text>
-    </View>
+    <AuthProvider>
+      <StatusBar style="auto" />
+      <RootNavigator />
+
+    </AuthProvider>
   );
-}
+};
+
+export default App;
