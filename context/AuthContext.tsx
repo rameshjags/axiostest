@@ -57,14 +57,14 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     const verifyPin = async (pin: string) => {
         if (!sessionId) throw new Error('No active session');
 
-        console.log({ sessionId, pin })
+
         try {
             const response = await authService.verifyPin({
                 pin_code: pin,
                 login_session_id: sessionId
             });
 
-            console.log({ response })
+
 
             setUser(response);
             await storage.saveToken(response.access_token);
