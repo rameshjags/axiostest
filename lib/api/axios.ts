@@ -14,9 +14,10 @@ const api = axios.create({
   timeout: 10000,
   headers: {
     'Content-Type': 'application/json',
+    "X-Device-Type": "mobile",
   },
 });
 
-console.log(api)
+
 
 export default api;
